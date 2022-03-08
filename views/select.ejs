@@ -1,0 +1,33 @@
+<h1>Users</h1>
+
+<a href="/insert">Insert</a>
+
+<table>
+    <tr>
+<td>ID</td>
+<td>USERNAME</td>
+<td>EMAIL</td>
+<td>FIRSTNAME</td>
+<td>LASTNAME</td>
+<td>BIRTHDATE</td>
+<td>DESCRIPTION</td>
+<td>IMGURL</td>
+<td></td>
+</tr>
+<% users.forEach(function(item) { %>
+    <tr>
+        <td><%= item.ID %></td>
+        <td><%= item.USERNAME %></td>
+        <td><%= item.EMAIL %></td>
+        <td><%= item.FIRSTNAME %></td>
+        <td><%= item.LASTNAME %></td>
+        <td><%= item.BIRTHDATE %></td>
+        <td><%= item.DESCRIPTION %></td>
+        <td><%= item.IMGURL %></td>
+        <td>
+            <a href="/delete?ID=<%= item.ID %>"onClick="return confirm('Silmek istediğinizden emin misiniz?')">Delete</a>
+            <a href="/update?ID=<%= item.ID %>">Update</a>
+        </td>
+    </tr>
+    <% }); %>
+</table>
